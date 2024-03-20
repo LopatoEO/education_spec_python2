@@ -62,15 +62,18 @@ class Car:
       self.gas -= gas_need
       self.mileage += way
       print(f"Пройдено {way} километров")
+
+  def __repr__(self) -> str:
+    return f"Объекст машина, запас хода {round(self.gas/self.gas_per_km, 2)} км, пробег {round(self.mileage, 2)} км"
     
   
        
-WW = Car(50,12.3)
-WW.fill(70)
-WW.ride(5)
-print(WW.mileage)
-WW.ride(3)
-print(WW.mileage)
-WW.fill(30)
-WW.ride(1)
-print(WW.mileage)
+myCar = Car(50,12.3)
+myCar.fill(70)
+myCar.ride(5)
+print(myCar)
+myCar.ride(3)
+print(myCar)
+myCar.fill(30)
+myCar.ride(1)
+print(myCar)
