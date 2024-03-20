@@ -66,14 +66,27 @@ class Car:
   def __repr__(self) -> str:
     return f"Объекст машина, запас хода {round(self.gas/self.gas_per_km, 2)} км, пробег {round(self.mileage, 2)} км"
     
-  
-       
 myCar = Car(50,12.3)
-myCar.fill(70)
-myCar.ride(5)
-print(myCar)
-myCar.ride(3)
-print(myCar)
-myCar.fill(30)
-myCar.ride(1)
-print(myCar)
+print("Введите комманду\n заправить <количество литров> \n проехать <количество килосметров> \n статистика \n")  
+while True:
+  command = input().split(" ")
+  if len(command) == 1:
+    if  command[0] == 'статистика':
+      print(myCar)
+    else: 
+      print("Неверно введена комманда")   
+  elif len(command) > 1 and len(command) <= 2:
+      try:
+        command[1] = float(command[1])
+        if command[0] == 'заправить':
+          myCar.fill(command[1])
+        elif command[0] == 'проехать':
+          myCar.ride(command[1])
+        else: 
+          print("Неверно введена комманда")   
+      except ValueError:
+        print("Введите число с данной коммандой")
+  elif len(command) > 2:  
+    print("Больше двух компонентов в комманде")
+
+  
