@@ -27,7 +27,7 @@ class Flat:
 
     def __repr__(self) -> str:
         names = tuple(map(lambda x: x['name'], self.rooms))
-        return f"Квартира из {len(self.rooms)} комнат. Комнаты: {','.join(names)}. Площадь квартиры {self.area} кв.м."
+        return f"Квартира из {len(self.rooms)} комнат. Комнаты: {', '.join(names)}. Площадь квартиры {self.area} кв.м."
 
 
 rooms = [
