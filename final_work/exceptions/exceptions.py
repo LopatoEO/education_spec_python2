@@ -1,0 +1,2 @@
+class UniqueCardError(Exception):
+    pass

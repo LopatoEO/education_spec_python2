@@ -1,0 +1,2 @@
+sqlalchemy==2.0.29
+prettytable==3.10.0
